@@ -1,6 +1,6 @@
 {
-  "name": "Mein Kalender",
-  "short_name": "Kalender",
+  "name": "ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN-TERMINE",
+  "short_name": "Mathenachhilfe",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -17,4 +17,5 @@
       "type": "image/png"
     }
   ]
+
 }
