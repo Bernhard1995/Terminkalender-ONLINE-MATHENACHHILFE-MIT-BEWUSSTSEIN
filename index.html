@@ -23,17 +23,26 @@
       padding:20px;
       background-color:#f5f5f5;
     }
-    img {
+
+    /* LOGO – Fall 2 (weißer Hintergrund im Bild) */
+    .logo {
       width:200px;
+      height:200px;
+      background-image: url("Firmenlogo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      mix-blend-mode: multiply;
       margin-bottom:20px;
-      background: transparent;
     }
+
     button {
       padding:15px 30px;
       font-size:1.2rem;
       cursor:pointer;
       margin-top:10px;
     }
+
     #installBtn {
       display:none;
       margin-top:20px;
@@ -44,10 +53,15 @@
     }
   </style>
 </head>
+
 <body>
-  <img src="Firmenlogo.png" alt="Firmenlogo">
+  <div class="logo"></div>
+
   <h1>ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN-TERMINE</h1>
-  <button onclick="window.open('https://drive.google.com/file/d/1CvltwJfArknOPCB-cg8Fg-FvjTJa7oZK/view?usp=sharing','_blank')">Zum Kalender</button>
+
+  <button onclick="window.open('https://drive.google.com/file/d/1CvltwJfArknOPCB-cg8Fg-FvjTJa7oZK/view?usp=sharing','_blank')">
+    Zum Kalender
+  </button>
 
   <!-- Button für Android PWA-Installation -->
   <button id="installBtn">Zu meinen Apps hinzufügen</button>
@@ -72,8 +86,4 @@
     });
   </script>
 </body>
-
 </html>
-
-
-
