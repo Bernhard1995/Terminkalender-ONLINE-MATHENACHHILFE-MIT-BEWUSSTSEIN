@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN</title>
 
-  <!-- Icon für Startbildschirm -->
-  <link rel="icon" href="Firmenlogo.png">
-
-  <!-- Manifest für PWA -->
+  <!-- ROT: SVG als Icon -->
+  <link rel="icon" href="Firmenlogo.svg">
   <link rel="manifest" href="manifest.json">
 
   <style>
@@ -24,15 +22,10 @@
       background-color:#f5f5f5;
     }
 
-    /* LOGO – Fall 2 (weißer Hintergrund im Bild) */
+    /* ROT: SVG direkt im DIV, Hintergrund ist automatisch transparent */
     .logo {
       width:200px;
       height:200px;
-      background-image: url("Firmenlogo.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      mix-blend-mode: multiply;
       margin-bottom:20px;
     }
 
@@ -55,7 +48,9 @@
 </head>
 
 <body>
-  <div class="logo"></div>
+
+  <!-- ROT: SVG direkt eingebunden -->
+  <img src="Firmenlogo.svg" alt="Firmenlogo" class="logo">
 
   <h1>ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN-TERMINE</h1>
 
@@ -63,7 +58,6 @@
     Zum Kalender
   </button>
 
-  <!-- Button für Android PWA-Installation -->
   <button id="installBtn">Zu meinen Apps hinzufügen</button>
 
   <script>
