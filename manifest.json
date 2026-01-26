@@ -1,5 +1,5 @@
 {
-  "name": "ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN-TERMINE",
+  "name": "ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN",
   "short_name": "Mathenachhilfe",
   "start_url": "./index.html",
   "display": "standalone",
@@ -19,4 +19,5 @@
   ]
 
 }
+
 
