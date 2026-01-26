@@ -59,7 +59,7 @@
   </button>
 
   <button 
-  onclick="window.open('https://wa.me/XXXX?text=Hallo%2C%20Bernhard%20ich%20w%C3%BCrde%20gerne%20einen%20Termin%20buchen%3A%0A-%20Mo%2C%2013.02.%20um%2010%3A00%0A-%20Di%2C%2014.02.%20um%2015%3A00%0A-%20Mi%2C%2015.02.%20um%2012%3A00%0A%0ALG%2C%20Bernhard','_blank')">
+  onclick="window.open('https://wa.me/436801420688?text=Hallo%2C%20Bernhard%20ich%20w%C3%BCrde%20gerne%20einen%20Termin%20buchen%3A%0A-%20Mo%2C%2013.02.%20um%2010%3A00%0A-%20Di%2C%2014.02.%20um%2015%3A00%0A-%20Mi%2C%2015.02.%20um%2012%3A00%0A%0ALG%2C%20Bernhard','_blank')">
   WhatsApp Kontakt
 </button>
 
@@ -86,4 +86,5 @@
   </script>
 </body>
 </html>
+
 
