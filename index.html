@@ -5,109 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN</title>
 
-  <!-- ROT: SVG als Icon -->
   <link rel="icon" href="Firmenlogo.svg">
   <link rel="manifest" href="manifest.json">
 
   <style>
     body {
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      font-family:sans-serif;
-      text-align:center;
-      padding:20px;
-      background-color:#f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
     }
 
-    /* ROT: SVG direkt im DIV, Hintergrund ist automatisch transparent */
     .logo {
-      width:200px;
-      height:200px;
-      margin-bottom:20px;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
     }
 
-    button {
-      padding:15px 30px;
-      font-size:1.2rem;
-      cursor:pointer;
-      margin-top:10px;
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    /* Buchungsbereich */
+    .booking-section {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .booking-section h2 {
+      font-size: 1.4em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .booking-section button {
+      width: 260px;
+      padding: 12px 16px;
+      font-size: 1em;
+      cursor: pointer;
     }
 
     #installBtn {
-      display:none;
-      margin-top:20px;
-      background-color:#007acc;
-      color:white;
-      border:none;
-      border-radius:10px;
+      display: none;
+      margin-top: 30px;
+      padding: 12px 20px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ROT: SVG direkt eingebunden -->
   <img src="Firmenlogo.svg" alt="Firmenlogo" class="logo">
 
   <h1>ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN</h1>
-  <h2 class="section-title">Buchung:</h2>
-  
-  <style>
-  h1 {
-    margin-bottom: 30px;
-  }
 
-  .section-title {
-    .section-title {
-  font-weight: 600;
-  font-size: 1.4em;
-  margin-bottom: 10px;
-}
-  </style>
+  <div class="booking-section">
+    <h2>Buchung</h2>
 
-<div class="booking-section">
-  <h2>Buchung</h2>
-  
-  <button onclick="window.open('https://drive.google.com/drive/folders/1gwk87t0EOa08elvETj79LlHhstuPisRH','_blank')">
-    Zum Kalender
-  </button>
+    <button onclick="window.open('https://drive.google.com/drive/folders/1gwk87t0EOa08elvETj79LlHhstuPisRH','_blank')">
+      Zum Kalender
+    </button>
 
-<button 
-onclick="window.open('https://wa.me/436801420688?text=Hallo%2C%20Bernhard%2C%20ich%20w%C3%BCrde%20gerne%20einen%20Termin%20buchen%3A%0A-%20Mo%2C%2001.01.%20um%209%3A00%0A-%20Di%2C%2002.01.%20um%2010%3A00%0A-%20Mi%2C%2003.01.%20um%2011%3A00%0A-%20%0A%0ALG%20','_blank')">
-  WhatsApp Terminbuchung
-</button>
-
-</div>
-
-.booking-section {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px; /* gleichmäßiger Abstand zwischen allem */
-}
-
-.booking-section h2 {
-  font-size: 1.4em;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.booking-section button {
-  width: 260px;          /* gleiche Breite */
-  padding: 12px 16px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-  .booking-section h2 {
-  letter-spacing: 0.5px;
-}
-
-  
+    <button onclick="window.open('https://wa.me/436801420688?text=Hallo%2C%20Bernhard%2C%20ich%20w%C3%BCrde%20gerne%20einen%20Termin%20buchen%3A%0A-%20Mo%2C%2001.01.%20um%209%3A00%0A-%20Di%2C%2002.01.%20um%2010%3A00%0A-%20Mi%2C%2003.01.%20um%2011%3A00%0A%0ALG','_blank')">
+      WhatsApp Terminbuchung
+    </button>
+  </div>
 
   <button id="installBtn">Zu meinen Apps hinzufügen</button>
 
@@ -125,24 +100,11 @@ onclick="window.open('https://wa.me/436801420688?text=Hallo%2C%20Bernhard%2C%20i
       installBtn.style.display = 'none';
       if (deferredPrompt) {
         deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
+        await deferredPrompt.userChoice;
         deferredPrompt = null;
       }
     });
   </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
