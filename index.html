@@ -368,27 +368,9 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
 
 
   <!-- APP INSTALLATION -->
-   <button id="installBtn">Zu meinen Apps hinzufügen</button>
-
-  <script>
-    let deferredPrompt;
-    const installBtn = document.getElementById('installBtn');
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.style.display = 'block';
-    });
-
-    installBtn.addEventListener('click', async () => {
-      installBtn.style.display = 'none';
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        await deferredPrompt.userChoice;
-        deferredPrompt = null;
-      }
-    });
-
+  <button id="installBtn">
+    📲 Zu meinen Apps hinzufügen
+  </button>
 
 </div>
 
