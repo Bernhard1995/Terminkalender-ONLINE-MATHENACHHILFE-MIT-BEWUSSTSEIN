@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -293,7 +294,7 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
 
     <!-- NEUER BUTTON FÜR VERTRETUNG -->
     <button class="button whatsapp-vertretung"
-      onclick="openWhatsAppTo(069917251676, 'Hallo Kaya, ich würde gerne einen Termin bei der Vertretung vereinbaren:\n\n- Datum: XXXX\n- Uhrzeit: XX:XX Uhr\n\nVielen Dank!')">
+      onclick="openWhatsAppTo(VERTRETUNG_NUMMER, 'Hallo, ich würde gerne einen Termin bei der Vertretung vereinbaren:\n\n- Datum: XXXX\n- Uhrzeit: XX:XX Uhr\n\nVielen Dank!')">
       <span class="symbol">💬</span>
       WhatsApp Terminwahl Vertretung
     </button>
@@ -335,7 +336,7 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
   </div>
 
 
-  <!-- BESTEHENDE SCHÜLER 
+  <!-- BESTEHENDE SCHÜLER -->
   <div class="section">
 
     <h2>📚 Bestehende Schüler</h2>
@@ -364,7 +365,7 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
       Feedback geben
     </button>
 
-  </div>-->
+  </div>
 
 
   <!-- APP INSTALLATION -->
@@ -429,7 +430,7 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
     </p>
 
     <p>
-      Dipl.-Ing. Bernhard [Winkler BSc<br> 
+      Dipl.-Ing. Bernhard [Winkler Bsc]<br>
       [St. Marein 5]<br>
       [3595 Brunn an der Wild]<br>
       Österreich<br>
@@ -568,4 +569,390 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
       eigenen Analyse- oder Werbe-Tracking-Dienste vorgesehen.
       Beim Aufruf der App können jedoch technisch notwendige
       Vorgänge des Browsers und des Hosting-Anbieters stattfinden.
-      Externe Dienste wie WhatsApp und Google können
+      Externe Dienste wie WhatsApp und Google können eigene
+      Technologien einsetzen, sobald du diese Dienste aufrufst.
+    </p>
+
+    <h3>10. Speicherdauer</h3>
+
+    <p>
+      Personenbezogene Daten werden nur so lange gespeichert,
+      wie dies für die jeweiligen Zwecke erforderlich ist
+      oder gesetzliche Aufbewahrungspflichten bestehen.
+      Danach werden die Daten gelöscht, sofern keine
+      rechtlichen Gründe für eine weitere Speicherung bestehen.
+    </p>
+
+    <h3>11. Weitergabe von Daten</h3>
+
+    <p>
+      Eine Weitergabe erfolgt nur, soweit dies zur Durchführung
+      der Nachhilfe, zur Bereitstellung der App, aufgrund
+      gesetzlicher Verpflichtungen oder aus anderen zulässigen
+      datenschutzrechtlichen Gründen erforderlich ist.
+    </p>
+
+    <h3>12. Deine Datenschutzrechte</h3>
+
+    <p>
+      Dir stehen nach Maßgabe der DSGVO insbesondere folgende
+      Rechte zu:
+    </p>
+
+    <ul>
+      <li>Recht auf Auskunft über deine gespeicherten Daten</li>
+      <li>Recht auf Berichtigung unrichtiger Daten</li>
+      <li>Recht auf Löschung deiner Daten</li>
+      <li>Recht auf Einschränkung der Verarbeitung</li>
+      <li>Recht auf Datenübertragbarkeit</li>
+      <li>Recht auf Widerspruch gegen bestimmte Verarbeitungen</li>
+      <li>Recht auf Widerruf einer erteilten Einwilligung</li>
+    </ul>
+
+    <p>
+      Zur Ausübung deiner Rechte kannst du dich jederzeit
+      unter den oben angegebenen Kontaktdaten melden.
+    </p>
+
+    <h3>13. Beschwerderecht</h3>
+
+    <p>
+      Wenn du der Ansicht bist, dass die Verarbeitung deiner
+      personenbezogenen Daten gegen Datenschutzrecht verstößt,
+      kannst du dich bei der österreichischen Datenschutzbehörde
+      beschweren:
+    </p>
+
+    <p>
+      Österreichische Datenschutzbehörde<br>
+      Barichgasse 40–42<br>
+      1030 Wien<br>
+      E-Mail: dsb@dsb.gv.at<br>
+      <a href="https://www.dsb.gv.at/"
+         target="_blank" rel="noopener noreferrer">
+        www.dsb.gv.at
+      </a>
+    </p>
+
+    <h3>14. Änderungen dieser Datenschutzerklärung</h3>
+
+    <p>
+      Diese Datenschutzerklärung kann angepasst werden,
+      wenn sich die App, die angebotenen Leistungen oder
+      die rechtlichen Anforderungen ändern.
+    </p>
+
+    <button class="privacy-close-bottom" onclick="closePrivacy()">
+      Schließen
+    </button>
+
+  </div>
+</div>
+
+
+<!-- ================================================= -->
+<!-- IMPRESSUM-POPUP -->
+<!-- ================================================= -->
+
+<div id="impressumModal" class="privacy-modal" aria-hidden="true">
+
+  <div class="privacy-content" role="dialog"
+       aria-modal="true" aria-labelledby="impressumTitle">
+
+    <button class="privacy-close" onclick="closeImpressum()"
+            aria-label="Fenster schließen">×</button>
+
+    <h2 id="impressumTitle">Impressum</h2>
+
+    <p><strong>Online-Mathenachhilfe mit Bewusstsein</strong></p>
+
+    <h3>1. Medieninhaber und Diensteanbieter</h3>
+
+    <p>
+      Bernhard [Nachname]<br>
+      [Vollständige Geschäftsanschrift]<br>
+      Österreich
+    </p>
+
+    <h3>2. Kontakt</h3>
+
+    <p>
+      Telefon: +43 680 1420688<br>
+      E-Mail: [Deine E-Mail-Adresse]
+    </p>
+
+    <h3>3. Unternehmensangaben</h3>
+
+    <p>
+      Unternehmensbezeichnung: [Falls vorhanden]<br>
+      Rechtsform: [Falls zutreffend]<br>
+      Unternehmensgegenstand: Online-Mathenachhilfe und
+      Lernbetreuung<br>
+      Firmenbuchnummer: [Falls vorhanden]<br>
+      Firmenbuchgericht: [Falls vorhanden]<br>
+      UID-Nummer: [Falls vorhanden]
+    </p>
+
+    <h3>4. Aufsichtsbehörde und berufsrechtliche Vorschriften</h3>
+
+    <p>
+      Zuständige Gewerbebehörde: [Bitte ergänzen, falls zutreffend]<br>
+      Anwendbare Rechtsvorschriften: [Bitte ergänzen, falls zutreffend]
+    </p>
+
+    <h3>5. Verantwortlich für den Inhalt</h3>
+
+    <p>
+      Bernhard [Nachname]<br>
+      [Vollständige Geschäftsanschrift]
+    </p>
+
+    <h3>6. Haftung für Inhalte</h3>
+
+    <p>
+      Die Inhalte dieser Website wurden mit größtmöglicher
+      Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
+      und Aktualität der Inhalte kann jedoch keine Gewähr
+      übernommen werden.
+    </p>
+
+    <h3>7. Haftung für externe Links</h3>
+
+    <p>
+      Diese Website enthält Links zu externen Websites
+      Dritter. Auf deren Inhalte habe ich keinen Einfluss.
+      Für die Inhalte der verlinkten Seiten ist stets der
+      jeweilige Anbieter oder Betreiber verantwortlich.
+    </p>
+
+    <h3>8. Urheberrecht</h3>
+
+    <p>
+      Die auf dieser Website veröffentlichten Inhalte und
+      Werke unterliegen dem österreichischen Urheberrecht.
+      Jede Verwertung außerhalb der gesetzlichen Grenzen
+      des Urheberrechts bedarf der vorherigen Zustimmung
+      des jeweiligen Rechteinhabers.
+    </p>
+
+    <h3>9. Online-Streitbeilegung</h3>
+
+    <p>
+      Informationen zu Verbraucherrechten und möglichen
+      Beschwerdestellen findest du bei den zuständigen
+      österreichischen Stellen.
+    </p>
+
+    <button class="privacy-close-bottom" onclick="closeImpressum()">
+      Schließen
+    </button>
+
+  </div>
+</div>
+
+
+<script>
+
+// ==================================
+// LINKS HIER EINTRAGEN
+// ==================================
+
+const resources = {
+
+  flyer: "https://drive.google.com/drive/folders/1fkQLzwvy2_zZxLdEfJDcErmWiHp-VaTR?usp=drive_link",
+
+  plaetze: "https://drive.google.com/drive/folders/1aslgjd7dNTq6LxYPACtWFJ_K1xmEgw-k",
+
+  faq: "https://drive.google.com/drive/folders/1CEoAb88FPJG4Qf5wp_DdNv_3rTOOvOo7",
+
+  agb: "https://drive.google.com/drive/folders/1NJUIkSHqdWqSP_eJ3Q7qiCnUA8eJYW5l",
+
+  lernmaterial: "LINK_LERNMATERIALIEN",
+
+  termine: "https://drive.google.com/drive/folders/1gwk87t0EOa08elvETj79LlHhstuPisRH"
+
+};
+
+
+// ==================================
+// WHATSAPP-NUMMERN
+// ==================================
+
+const HAUPT_NUMMER = "436801420688";
+
+// HIER DIE NUMMER DER VERTRETUNG EINTRAGEN!
+const VERTRETUNG_NUMMER = "4369917251676";
+
+
+// ==================================
+// DOKUMENTE UND LINKS ÖFFNEN
+// ==================================
+
+function openResource(name) {
+
+  const url = resources[name];
+
+  if (!url || url.startsWith("LINK_")) {
+    alert("Dieser Bereich wird gerade vorbereitet. Bitte versuche es später erneut.");
+    return;
+  }
+
+  window.open(url, "_blank", "noopener,noreferrer");
+
+}
+
+
+// ==================================
+// WHATSAPP NACHRICHTEN
+// ==================================
+
+function openWhatsApp(message) {
+
+  openWhatsAppTo(HAUPT_NUMMER, message);
+
+}
+
+
+function openWhatsAppTo(number, message) {
+
+  if (!number || number.includes("HIER_")) {
+    alert("Die WhatsApp-Nummer der Vertretung muss noch eingetragen werden.");
+    return;
+  }
+
+  const url = "https://wa.me/" + number +
+              "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank", "noopener,noreferrer");
+
+}
+
+
+// ==================================
+// DATENSCHUTZ ÖFFNEN UND SCHLIESSEN
+// ==================================
+
+function openPrivacy() {
+
+  const modal = document.getElementById("privacyModal");
+
+  modal.style.display = "flex";
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+}
+
+
+function closePrivacy() {
+
+  const modal = document.getElementById("privacyModal");
+
+  modal.style.display = "none";
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+}
+
+
+// ==================================
+// IMPRESSUM ÖFFNEN UND SCHLIESSEN
+// ==================================
+
+function openImpressum() {
+
+  const modal = document.getElementById("impressumModal");
+
+  modal.style.display = "flex";
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+}
+
+
+function closeImpressum() {
+
+  const modal = document.getElementById("impressumModal");
+
+  modal.style.display = "none";
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+}
+
+
+// ==================================
+// POPUPS AUSSERHALB SCHLIESSEN
+// ==================================
+
+document.getElementById("privacyModal").addEventListener("click", function(e) {
+
+  if (e.target === this) {
+    closePrivacy();
+  }
+
+});
+
+
+document.getElementById("impressumModal").addEventListener("click", function(e) {
+
+  if (e.target === this) {
+    closeImpressum();
+  }
+
+});
+
+
+// ==================================
+// POPUPS MIT ESCAPE SCHLIESSEN
+// ==================================
+
+document.addEventListener("keydown", function(e) {
+
+  if (e.key === "Escape") {
+    closePrivacy();
+    closeImpressum();
+  }
+
+});
+
+
+// ==================================
+// APP INSTALLATION
+// ==================================
+
+let deferredPrompt;
+
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+
+  e.preventDefault();
+
+  deferredPrompt = e;
+
+  installBtn.style.display = "block";
+
+});
+
+
+installBtn.addEventListener("click", async () => {
+
+  if (deferredPrompt) {
+
+    deferredPrompt.prompt();
+
+    await deferredPrompt.userChoice;
+
+    deferredPrompt = null;
+
+    installBtn.style.display = "none";
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
+```
