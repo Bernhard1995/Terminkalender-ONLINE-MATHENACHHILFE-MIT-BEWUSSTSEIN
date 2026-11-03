@@ -293,7 +293,7 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
 
     <!-- NEUER BUTTON FÜR VERTRETUNG -->
     <button class="button whatsapp-vertretung"
-      onclick="openWhatsAppTo(VERTRETUNG_NUMMER, 'Hallo, ich würde gerne einen Termin bei der Vertretung vereinbaren:\n\n- Datum: XXXX\n- Uhrzeit: XX:XX Uhr\n\nVielen Dank!')">
+      onclick="openWhatsAppTo(VERTRETUNG_NUMMER, 'Hallo, Kaya, ich würde gerne einen Termin bei der Vertretung vereinbaren:\n\n- Datum: XXXX\n- Uhrzeit: XX:XX Uhr\n\nVielen Dank!')">
       <span class="symbol">💬</span>
       WhatsApp Terminwahl Vertretung
     </button>
@@ -368,9 +368,27 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
 
 
   <!-- APP INSTALLATION -->
-  <button id="installBtn">
-    📲 Zu meinen Apps hinzufügen
-  </button>
+   <button id="installBtn">Zu meinen Apps hinzufügen</button>
+
+  <script>
+    let deferredPrompt;
+    const installBtn = document.getElementById('installBtn');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.style.display = 'block';
+    });
+
+    installBtn.addEventListener('click', async () => {
+      installBtn.style.display = 'none';
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        deferredPrompt = null;
+      }
+    });
+
 
 </div>
 
@@ -429,12 +447,12 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
     </p>
 
     <p>
-      Dipl.-Ing. Bernhard [Winkler Bsc]<br>
-      [St. Marein 5]<br>
-      [3595 Brunn an der Wild]<br>
+      Dipl.-Ing. Bernhard Winkler Bsc<br>
+      St. Marein 5<br>
+      3595 Brunn an der Wild<br>
       Österreich<br>
-      E-Mail: [winklerbernhard2008@yahoo.de]<br>
-      Telefon: +43 680 1420688
+      E-Mail: winklerbernhard2008@yahoo.de<br>
+      Telefon: +43 680 14 20 688
     </p>
 
     <h3>2. Allgemeines zur Datenverarbeitung</h3>
@@ -668,8 +686,9 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
     <h3>1. Medieninhaber und Diensteanbieter</h3>
 
     <p>
-      Bernhard [Nachname]<br>
-      [Vollständige Geschäftsanschrift]<br>
+      Dipl.-Ing. Bernhard Winkler BSc<br>
+      St. Marein 5<br>
+      Brunn an der Wild
       Österreich
     </p>
 
@@ -677,33 +696,34 @@ Willkommen bei deiner persönlichen Online-Mathenachhilfe!
 
     <p>
       Telefon: +43 680 1420688<br>
-      E-Mail: [Deine E-Mail-Adresse]
+      E-Mail: winklerbernhard2008@yahoo.de
     </p>
 
     <h3>3. Unternehmensangaben</h3>
 
     <p>
-      Unternehmensbezeichnung: [Falls vorhanden]<br>
-      Rechtsform: [Falls zutreffend]<br>
-      Unternehmensgegenstand: Online-Mathenachhilfe und
-      Lernbetreuung<br>
-      Firmenbuchnummer: [Falls vorhanden]<br>
-      Firmenbuchgericht: [Falls vorhanden]<br>
-      UID-Nummer: [Falls vorhanden]
+      Betrieb: ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN<br>
+      Rechtsform: Einzelunternehmer<br>
+      Steuernummer: 23 211/5360
+      
+
     </p>
 
     <h3>4. Aufsichtsbehörde und berufsrechtliche Vorschriften</h3>
 
-    <p>
-      Zuständige Gewerbebehörde: [Bitte ergänzen, falls zutreffend]<br>
-      Anwendbare Rechtsvorschriften: [Bitte ergänzen, falls zutreffend]
-    </p>
+<p>
+  Zuständige Aufsichtsbehörde: Keine (Die Tätigkeit als Nachhilfeanbieter/Privatunterricht unterliegt nicht der Gewerbeordnung).<br>
+  Anwendbare Rechtsvorschriften: Es gelten keine spezifischen berufsrechtlichen Vorschriften. Die Tätigkeit ist gemäß § 2 Abs. 1 Z 12 GewO 1994 von der Gewerbeordnung ausgenommen.
+</p>
+
 
     <h3>5. Verantwortlich für den Inhalt</h3>
 
     <p>
-      Bernhard [Nachname]<br>
-      [Vollständige Geschäftsanschrift]
+      Dipl.-Ing. Bernhard Winkler BSc<br>
+      St. Marein 5
+      3595 Brunn an der Wild
+      Österreich
     </p>
 
     <h3>6. Haftung für Inhalte</h3>
