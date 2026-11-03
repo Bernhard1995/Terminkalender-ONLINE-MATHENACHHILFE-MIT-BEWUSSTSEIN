@@ -4,157 +4,412 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffda32">
+
   <title>ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN</title>
 
   <link rel="icon" href="Firmenlogo.svg">
   <link rel="manifest" href="manifest.json">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin: 0;
+      padding: 25px 16px 35px;
       min-height: 100vh;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 20px;
-      background-color: #f5f5f5;
+      background: #f5f5f5;
+      color: #222;
     }
 
     .logo {
-      width: 200px;
-      height: 200px;
-      margin-bottom: 20px;
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin: 10px auto;
     }
 
     h1 {
+      font-size: clamp(21px, 4vw, 30px);
+      margin: 12px 0 8px;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      color: #666;
       margin-bottom: 30px;
+      font-size: 15px;
     }
 
-    /* Buchungsbereich */
-    .booking-section {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
+    .main-container {
+      width: 100%;
+      max-width: 650px;
+      margin: auto;
     }
 
-    .booking-section h2 {
-      font-size: 1.4em;
-      font-weight: 600;
+    .section {
+      background: white;
+      padding: 22px;
+      margin: 20px 0;
+      border-radius: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      font-size: 21px;
+      margin: 0 0 18px;
+      font-weight: 700;
+      text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 10px;
     }
 
-    .booking-section button {
-      width: 260px;
-      padding: 12px 16px;
-      font-size: 1em;
-      cursor: pointer;
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 4px;
+      background: #ffda32;
+      margin: 10px auto 0;
+      border-radius: 5px;
     }
 
-    /* Neue Kunden */
-    .new-customer-section {
-      margin-top: 40px;
+    .button {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 16px;
-    }
-
-    .new-customer-section h2 {
-      font-size: 1.4em;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 10px;
-    }
-
-    .new-customer-section button {
-      width: 260px;
-      padding: 12px 16px;
-      font-size: 1em;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 390px;
+      min-height: 52px;
+      margin: 12px auto;
+      padding: 13px 18px;
+      background: #ffda32;
+      color: #171717;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
       cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: #f3c900;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    .button .symbol {
+      font-size: 21px;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .whatsapp:hover {
+      background: #1db954;
+    }
+
+    .student-button {
+      background: #fff3b0;
+    }
+
+    .footer {
+      margin-top: 35px;
+      padding: 20px 10px;
+      border-top: 5px solid #e92727;
+      background: #ffda32;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .footer a {
+      color: #222;
+      text-decoration: none;
+      margin: 0 7px;
     }
 
     #installBtn {
       display: none;
-      margin-top: 30px;
-      padding: 12px 20px;
-      background-color: #007acc;
+      margin: 25px auto;
+      padding: 14px 22px;
+      background: #222;
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 15px 12px 25px;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .section {
+        padding: 18px 14px;
+      }
+
+      .button {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <img src="Firmenlogo.svg" alt="Firmenlogo" class="logo">
+  <img src="Firmenlogo.svg"
+       alt="Firmenlogo"
+       class="logo">
 
   <h1>ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN</h1>
 
-  <div class="booking-section">
-    <h2>Buchung</h2>
+  <p class="subtitle">
+    Willkommen bei deiner persönlichen Online-Mathenachhilfe!
+  </p>
 
-    <button onclick="window.open('https://drive.google.com/drive/folders/1gwk87t0EOa08elvETj79LlHhstuPisRH','_blank')">
-      Zum Kalender
+  <div class="main-container">
+
+    <!-- BUCHUNG -->
+    <div class="section">
+
+      <h2>📅 Buchung</h2>
+
+      <button class="button"
+        onclick="window.open('https://drive.google.com/drive/folders/1gwk87t0EOa08elvETj79LlHhstuPisRH','_blank')">
+        <span class="symbol">📅</span>
+        Zum Kalender
+      </button>
+
+      <button class="button whatsapp"
+        onclick="window.open('https://wa.me/436801420688?text=Hallo%2C%20Bernhard%2C%20ich%20w%C3%BCrde%20gerne%20einen%20Termin%20buchen%3A%0A-%20Mo%2C%2001.01.%20um%209%3A00%0A-%20Di%2C%2002.01.%20um%2010%3A00%0A-%20Mi%2C%2003.01.%20um%2011%3A00%0A%0ALG','_blank')">
+        <span class="symbol">💬</span>
+        WhatsApp Terminbuchung
+      </button>
+
+    </div>
+
+
+    <!-- NEUE KUNDEN -->
+    <div class="section">
+
+      <h2>🆕 Neue Kunden</h2>
+
+      <button class="button"
+        onclick="openResource('flyer')">
+        <span class="symbol">📄</span>
+        Angebotsflyer
+      </button>
+
+      <button class="button"
+        onclick="openWhatsApp('Hallo Bernhard, ich möchte gerne eine Probestunde vereinbaren:\n\n- Datum: XXXX\n- Uhrzeit: XX:XX Uhr\n\nVielen Dank!')">
+        <span class="symbol">🎓</span>
+        Probestunde vereinbaren
+      </button>
+
+      <button class="button"
+        onclick="openResource('plaetze')">
+        <span class="symbol">👥</span>
+        Stammschülerplätze
+      </button>
+
+      <button class="button"
+        onclick="openResource('faq')">
+        <span class="symbol">📋</span>
+        Checkliste & FAQs
+      </button>
+
+      <button class="button"
+        onclick="openResource('agb')">
+        <span class="symbol">📝</span>
+        AGBs & Anmeldeformular
+      </button>
+
+    </div>
+
+
+    <!-- BESTEHENDE SCHÜLER -->
+    <div class="section">
+
+      <h2>📚 Bestehende Schüler</h2>
+
+      <button class="button student-button"
+        onclick="openResource('lernmaterial')">
+        <span class="symbol">📖</span>
+        Lernmaterialien
+      </button>
+
+      <button class="button student-button"
+        onclick="openResource('termine')">
+        <span class="symbol">🗓️</span>
+        Meine Termine
+      </button>
+
+      <button class="button student-button"
+        onclick="openWhatsApp('Hallo Bernhard, ich habe eine Frage zu meiner Mathenachhilfe.')">
+        <span class="symbol">💬</span>
+        Kontakt zu Bernhard
+      </button>
+
+      <button class="button student-button"
+        onclick="openWhatsApp('Hallo Bernhard, ich möchte dir gerne Feedback geben:')">
+        <span class="symbol">⭐</span>
+        Feedback geben
+      </button>
+
+    </div>
+
+
+    <!-- APP INSTALLATION -->
+    <button id="installBtn">
+      📲 Zu meinen Apps hinzufügen
     </button>
 
-    <button onclick="window.open('https://wa.me/436801420688?text=Hallo%2C%20Bernhard%2C%20ich%20w%C3%BCrde%20gerne%20einen%20Termin%20buchen%3A%0A-%20Mo%2C%2001.01.%20um%209%3A00%0A-%20Di%2C%2002.01.%20um%2010%3A00%0A-%20Mi%2C%2003.01.%20um%2011%3A00%0A%0ALG','_blank')">
-      WhatsApp Terminbuchung
-    </button>
   </div>
 
-  <!-- NEUE KUNDEN -->
-  <div class="new-customer-section">
-    <h2>Neue Kunden</h2>
 
-    <button onclick="window.open('https://drive.google.com/drive/folders/1fkQLzwvy2_zZxLdEfJDcErmWiHp-VaTR?usp=drive_link','_blank')">
-      Angebotsflyer
-    </button>
+  <!-- FUSSZEILE -->
+  <div class="footer">
 
-    <button onclick="window.open('https://wa.me/436801420688?text=Hallo%20Bernhard%2C%20ich%20m%C3%B6chte%20gerne%20eine%20Probestunde%20vereinbaren%3A%0A%0A-%20Datum%3A%20XXXX%0A-%20Uhrzeit%3A%20XX%3AXX%20Uhr%0A%0AVielen%20Dank%21','_blank')">
-    Probestunde vereinbaren
-    </button>
-  
+    <strong>ONLINE-MATHENACHHILFE MIT BEWUSSTSEIN</strong>
 
-    <button onclick="window.open('https://drive.google.com/drive/folders/1aslgjd7dNTq6LxYPACtWFJ_K1xmEgw-k','_blank')">
-      Stammschülerplätze
-    </button>
+    <br>
 
-    <button onclick="window.open('https://drive.google.com/drive/folders/1CEoAb88FPJG4Qf5wp_DdNv_3rTOOvOo7','_blank')">
-      Checkliste & FAQs
-    </button>
+    <a href="#" onclick="openResource('impressum'); return false;">
+      Impressum
+    </a>
 
-    <button onclick="window.open('https://drive.google.com/drive/folders/1NJUIkSHqdWqSP_eJ3Q7qiCnUA8eJYW5l','_blank')">
-      AGBs & Anmeldeformular
-    </button>
+    |
+
+    <a href="#" onclick="openResource('datenschutz'); return false;">
+      Datenschutz
+    </a>
+
+    |
+
+    <a href="#" onclick="openWhatsApp('Hallo Bernhard, ich habe eine Frage.') ; return false;">
+      Kontakt
+    </a>
+
+    <br>
+
+    © 2026 Alle Rechte vorbehalten
 
   </div>
 
-  <button id="installBtn">Zu meinen Apps hinzufügen</button>
 
   <script>
+
+    // ==================================
+    // LINKS HIER EINTRAGEN
+    // ==================================
+
+    const resources = {
+
+      flyer: "https://drive.google.com/drive/folders/1fkQLzwvy2_zZxLdEfJDcErmWiHp-VaTR?usp=drive_link",
+
+      plaetze: "https://drive.google.com/drive/folders/1aslgjd7dNTq6LxYPACtWFJ_K1xmEgw-k",
+
+      faq: "https://drive.google.com/drive/folders/1CEoAb88FPJG4Qf5wp_DdNv_3rTOOvOo7",
+
+      agb: "https://drive.google.com/drive/folders/1NJUIkSHqdWqSP_eJ3Q7qiCnUA8eJYW5l",
+
+      lernmaterial: "LINK_LERNMATERIALIEN",
+
+      termine: "https://drive.google.com/drive/folders/1gwk87t0EOa08elvETj79LlHhstuPisRH",
+
+      impressum: "LINK_IMPRESSUM",
+
+      datenschutz: "LINK_DATENSCHUTZ"
+
+    };
+
+
+    // ==================================
+    // DOKUMENTE UND LINKS ÖFFNEN
+    // ==================================
+
+    function openResource(name) {
+
+      const url = resources[name];
+
+      if (!url || url.startsWith("LINK_")) {
+        alert("Dieser Bereich wird gerade vorbereitet. Bitte versuche es später erneut.");
+        return;
+      }
+
+      window.open(url, "_blank", "noopener,noreferrer");
+
+    }
+
+
+    // ==================================
+    // WHATSAPP NACHRICHTEN
+    // ==================================
+
+    function openWhatsApp(message) {
+
+      const url = "https://wa.me/436801420688?text="
+                  + encodeURIComponent(message);
+
+      window.open(url, "_blank");
+
+    }
+
+
+    // ==================================
+    // APP INSTALLATION
+    // ==================================
+
     let deferredPrompt;
+
     const installBtn = document.getElementById('installBtn');
 
     window.addEventListener('beforeinstallprompt', (e) => {
+
       e.preventDefault();
+
       deferredPrompt = e;
+
       installBtn.style.display = 'block';
+
     });
 
+
     installBtn.addEventListener('click', async () => {
-      installBtn.style.display = 'none';
+
       if (deferredPrompt) {
+
         deferredPrompt.prompt();
+
         await deferredPrompt.userChoice;
+
         deferredPrompt = null;
+
+        installBtn.style.display = 'none';
+
       }
+
     });
+
   </script>
 
 </body>
