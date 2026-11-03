@@ -919,37 +919,22 @@ document.addEventListener("keydown", function(e) {
 
 // ==================================
 // APP INSTALLATION
-// ==================================
 
 let deferredPrompt;
 
-const installBtn = document.getElementById("installBtn");
-
 window.addEventListener("beforeinstallprompt", (e) => {
-
   e.preventDefault();
-
   deferredPrompt = e;
 
-  installBtn.style.display = "block";
+  const btn = document.getElementById("installBtn");
+  btn.style.display = "block";
 
-});
-
-
-installBtn.addEventListener("click", async () => {
-
-  if (deferredPrompt) {
-
+  btn.onclick = async () => {
     deferredPrompt.prompt();
-
     await deferredPrompt.userChoice;
-
     deferredPrompt = null;
-
-    installBtn.style.display = "none";
-
-  }
-
+    btn.style.display = "none";
+  };
 });
 
 </script>
