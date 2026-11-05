@@ -935,24 +935,67 @@ document.addEventListener("keydown", function(e) {
 
 
 // ==================================
+
 // APP INSTALLATION
 
 let deferredPrompt;
 
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
+const installBtn = document.getElementById("installBtn");
 
-  const btn = document.getElementById("installBtn");
-  btn.style.display = "block";
+// Prüfen, ob die App bereits installiert ist
+const isInstalled =
+  window.matchMedia("(display-mode: standalone)").matches ||
+  window.navigator.standalone === true;
 
-  btn.onclick = async () => {
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    deferredPrompt = null;
-    btn.style.display = "none";
-  };
-});
+if (isInstalled) {
+  installBtn.style.display = "none";
+} else {
+
+  // CHROME / ANDROID
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    installBtn.style.display = "block";
+    installBtn.textContent = "App installieren";
+
+    installBtn.onclick = async () => {
+      if (!deferredPrompt) return;
+
+      deferredPrompt.prompt();
+
+      const choice = await deferredPrompt.userChoice;
+
+      deferredPrompt = null;
+      installBtn.style.display = "none";
+    };
+  });
+
+  // SAFARI / IPHONE / IPAD
+  const isIOS = /iphone|ipad|ipod/i.test(
+    window.navigator.userAgent
+  );
+
+  const isSafari = /^((?!chrome|android).)*safari/i.test(
+    window.navigator.userAgent
+  );
+
+  if (isIOS && isSafari) {
+    installBtn.style.display = "block";
+    installBtn.textContent = "App zum Home-Bildschirm hinzufügen";
+
+    installBtn.onclick = () => {
+      alert(
+        "So installierst du unsere App:\n\n" +
+        "1. Tippe unten auf das Teilen-Symbol (□ ↑).\n" +
+        "2. Wähle 'Zum Home-Bildschirm'.\n" +
+        "3. Tippe oben rechts auf 'Hinzufügen'.\n\n" +
+        "Fertig! Die App befindet sich jetzt auf deinem Home-Bildschirm."
+      );
+    };
+  }
+}
+
 
 </script>
 
